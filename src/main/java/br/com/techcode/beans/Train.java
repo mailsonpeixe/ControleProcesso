@@ -1,4 +1,4 @@
-package com.xvitcoder.angualrspringapp.beans;
+package br.com.techcode.beans;
 
 /**
  * Created with IntelliJ IDEA.
@@ -52,4 +52,10 @@ public class Train {
     public void setDiesel(Boolean diesel) {
         this.diesel = diesel;
     }
+
+    @Override
+    public String toString() {
+        return name + ", speed=" + speed + ", diesel=" + diesel;
+    }
+    
 }

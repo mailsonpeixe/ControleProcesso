@@ -7,12 +7,19 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/spring/app-config.xml</param-value>
+        <param-value>br.com.techcode.spring.config</param-value>
     </context-param>
-
+    
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+    <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+    <context-param>
+        <param-name>contextClass</param-name>
+        <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
+    </context-param>
 
     <servlet>
         <servlet-name>DispatcherServlet</servlet-name>

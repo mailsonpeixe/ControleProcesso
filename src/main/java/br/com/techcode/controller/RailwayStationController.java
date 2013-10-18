@@ -1,4 +1,4 @@
-package com.xvitcoder.angualrspringapp.controller;
+package br.com.techcode.controller;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.xvitcoder.angualrspringapp.beans.RailwayStation;
-import com.xvitcoder.angualrspringapp.service.RailwayStationServiceImpl;
+import br.com.techcode.beans.RailwayStation;
+import br.com.techcode.service.RailwayStationServiceImpl;
 
 @Controller
 @RequestMapping("/railwaystations")

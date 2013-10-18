@@ -1,0 +1,119 @@
+<div class="alert alert-error" ng-show="error">{{errorMessage}}</div>
+<form class="form-horizontal">
+
+    <div class="control-group">
+        <label class="control-label" for="cidade_nome">Nome Cidade</label>
+
+        <div class="controls">
+            <input type="text" id="cidade_nome" ng-model="cidade.nome"
+                   placeholder="Nome da Cidade" required min="2">
+        </div>
+    </div>
+
+
+    <div class="control-group">
+        <label class="control-label" for="estado_nome">Estado Nome</label>
+
+        <div class="controls">
+            <input type="text" id="estado_nome" ng-model="cidade.estado"
+                   placeholder="Nome do Estado" required min="2">
+        </div>
+    </div>
+    <div class="control-group" >
+        <label class="control-label" for="train_name">Trem</label>
+        <div class="controls">
+            <select id="train_name" ng-options="value.name +' '+  value.speed for value in trains" ng-model="cidade.train">
+            </select>
+        </div><br/>
+        chosenA = {{cidade.train}}<br/>
+        <hr/>
+    </div>
+    <div class="control-group" >
+
+        <!--<div>-->
+        <!--<input type="Button" value="Add" data-ng-click="addItem(item)">-->
+        <!--</div>-->
+        <label class="control-label" for="trainauto_name">Trem AutoComplete</label>
+
+        <div class="controls">
+            <input type="text" data-ng-model="cidade.train2" list="comicstitle">
+
+            <datalist id="comicstitle">
+                <option  ng-options="v for v in trains" data-ng-repeat="ttl in trains" value="{{ttl}}">
+            </datalist>
+        </div><br/>
+        chosenA = {{cidade.train2}}<br/>
+        <hr/>
+    </div>
+    <!--	<div class="control-group">
+                    <label class="control-label" for="train_speed">Speed</label>
+    
+                    <div class="controls">
+    
+    
+                            <input class="span3" type="text" id="train_speed"
+                                    ng-model="rs.train.speed" placeholder="Speed" required min="1">
+                            <span class="add-on">km/h</span>
+                    </div>
+            </div>-->
+    <div class="control-group">
+        <!--		<div class="controls">
+                                <label class="checkbox"> <input type="checkbox"
+                                        ng-model="rs.train.diesel"> Is Diesel
+                                </label>
+                        </div>-->
+        <hr />
+        <div class="controls">
+            <button type="button" class="btn btn-primary"
+                    ng-disabled="!cidade.nome || !cidade.estado" ng-hide="editMode"
+                    ng-click="addNovaCidade(cidade)">Add Nova Cidade</button>
+
+            <button type="button" class="btn btn-primary"
+                    ng-disabled="!cidade.estado || !cidade.nome" ng-show="editMode"
+                    ng-click="updateCidade(cidade)">Salvar Cidade</button>
+            <button type="button" class="btn" ng-click="resetCidadeForm()">Reset</button>
+        </div>
+    </div>
+
+</form>
+<hr />
+<h3>Lista de Cidade</h3>
+<div class="alert alert-info" ng-show="cidades.length == 0">Nenhuma Cidade encontrada</div>
+<table class="table table-bordered table-striped" ng-show="cidades.length > 0">
+    <thead>
+        <tr>
+            <th style="text-align: center; width: 25px;">Id</th>
+            <th style="text-align: center;">Nome</th>
+            <th style="text-align: center;">Estado</th>
+            <th style="text-align: center;">Trem Sóo</th>
+            <th style="text-align: center;">Trem 2 uai</th>
+            <!--
+                                    <th style="text-align: center;">Speed</th>
+                                    <th style="text-align: center;">Diesel</th>
+            -->
+            <th style="text-align: center;">Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="item in cidades | orderBy:predicate">
+            <td style="text-align: center;">{{item.id}}</td>
+            <td>{{item.nome}}</td>
+            <td>{{item.estado}}</td>
+            <td>{{item.train.name}} {{item.train.speed}}</td>
+            <td>{{item.train2.name}} {{item.train2.speed}}</td>
+
+
+            <!-- <td>{{train.speed}}</td>
+            <td style="text-align: center; width: 20px;"><span
+                    ng-show="train.diesel" class="icon-ok"></span></td> -->
+
+            <td style="width: 30%; text-align: center;">
+                <button class="btn btn-mini btn-danger"
+                        ng-click="removeCidade(item.id)">Remover</button>
+                <button class="btn btn-mini btn-success" ng-click="editCidade(item)">Editar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn btn-danger" ng-show="cidades.length > 1"
+        ng-click="removeAllCidades()">Remover Todas as Cidades</button>

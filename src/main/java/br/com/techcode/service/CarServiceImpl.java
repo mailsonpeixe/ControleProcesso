@@ -1,4 +1,4 @@
-package com.xvitcoder.angualrspringapp.service;
+package br.com.techcode.service;
 
 import org.springframework.stereotype.Service;
 
