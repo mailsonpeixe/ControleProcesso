@@ -1,33 +1,88 @@
 <!doctype html>
 <html lang="en" ng-app="controleProcesso">
-<head>
-    <meta charset="utf-8">
-    <title>Service App</title>
-    <link rel="stylesheet" href="resources/css/app.css"/>
-    <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" />
-</head>
-<body>
-<div id="wrapper">
+    <head>
+        <meta charset="utf-8">
+        <title>Service App</title>
+        <link rel="stylesheet" href="resources/css/app.css"/>
+        <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" />
+    </head>
+    <body>
+        <div class="navbar">
+            <div class="navbar-inner">
+                <a class="brand" href="#">
+                    <small>
+                        <i class="icon-eye-close"></i>
+                        Controle de Processos
+                    </small>
+                </a>
+                <ul class="nav pull-right">
+                    <li class="divider-vertical"></li>
+                    <li>
+                        <a  href="#menuModal" data-toggle="modal">
+                            <i class="icon-list-alt"></i>
+                        </a>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li>
+                        <a href="#">
+                            <i class="icon-tasks"></i>
+                        </a>
+                    </li>
+                    <li class="divider-vertical"></li>
+                    <li>
+                        <a href="#">
+                            <i class="icon-calendar"></i> 03/10/1990
+                        </a>
+                    </li>
+                    <li class="divider-vertical"></li>
 
-    <ul class="menu">
-        <li><a href="#/cars">Cars</a></li>
-        <li><a href="#/trains">Trains</a></li>
-        <li><a href="#/railwaystations">Railway Station</a></li>
-        <li><a href="#/cidades">Cidades</a></li>
-    </ul>
-    <hr class="" />
-    <div ng-view></div>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mailson <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Minha Página</a></li>
+                            <li><a href="#">Configurações</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-</div>
+        <div id="menuModal" class="modal hide fade" 
+             tabindex="-1" role="dialog"
+             aria-labelledby="menuModal" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
+                <h3 id="myModalLabel">Menu</h3>
+            </div>
+            <div class="modal-body">
+                <div class="row-fluid">
+                    <ul class="thumbnails">
+                        <li><a href="#/cars" data-dismiss="modal">Cars</a></li>
+                        <li><a href="#/trains" data-dismiss="modal">Trains</a></li>
+                        <li><a href="#/railwaystations" data-dismiss="modal"> Railway Station</a></li>
+                        <li><a href="#/cidades" data-dismiss="modal">Cidades</a></li>
+                    </ul>
+                </div>
+            </div>           
+        </div>
 
-<script src="resources/js/lib/angular/angular.js"></script>
-<script src="resources/js/app.js"></script>
-<script src="resources/js/services.js"></script>
-<script src="resources/js/controllers/RailwayStationController.js"></script>
-<script src="resources/js/controllers/CarController.js"></script>
-<script src="resources/js/controllers/TrainController.js"></script>
-<script src="resources/js/controllers/CidadeController.js"></script>
-<script src="resources/js/filters.js"></script>
-<script src="resources/js/directives.js"></script>
-</body>
+        <div id="wrapper">
+            <hr class="" />
+            <div ng-view ></div>
+
+        </div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/js/bootstrap.min.js"></script>
+        <script src="resources/js/lib/angular/angular.js"></script>
+        <script src="resources/js/app.js"></script>
+        <script src="resources/js/services.js"></script>
+        <script src="resources/js/controllers/RailwayStationController.js"></script>
+        <script src="resources/js/controllers/CarController.js"></script>
+        <script src="resources/js/controllers/TrainController.js"></script>
+        <script src="resources/js/controllers/CidadeController.js"></script>
+        <script src="resources/js/filters.js"></script>
+        <script src="resources/js/directives.js"></script>
+    </body>
 </html>
