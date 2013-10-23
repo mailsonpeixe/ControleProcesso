@@ -12,10 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- * Created with IntelliJ IDEA.
- * User: xvitcoder
- * Date: 12/21/12
- * Time: 12:23 AM
+ * Created with IntelliJ IDEA. User: xvitcoder Date: 12/21/12 Time: 12:23 AM
  */
 @Controller
 @RequestMapping("/cars")
@@ -25,27 +22,36 @@ public class CarController {
     private CarService carService;
 
     @RequestMapping("/carlist.json")
-    public @ResponseBody List<String> getCarList() {
+    public @ResponseBody
+    List<String> getCarList() {
         return carService.getAllCars();
     }
 
     @RequestMapping(value = "/addCar/{car}", method = RequestMethod.POST)
-    public @ResponseBody void addCar(@PathVariable("car") String car) {
+    public @ResponseBody
+    void addCar(@PathVariable("car") String car) {
         carService.addCar(car);
     }
 
     @RequestMapping(value = "/removeCar/{car}", method = RequestMethod.DELETE)
-    public @ResponseBody void removeCar(@PathVariable("car") String car) {
+    public @ResponseBody
+    void removeCar(@PathVariable("car") String car) {
         carService.deleteCar(car);
     }
 
     @RequestMapping(value = "/removeAllCars", method = RequestMethod.DELETE)
-    public @ResponseBody void removeAllCars() {
+    public @ResponseBody
+    void removeAllCars() {
         carService.deleteAll();
     }
 
-    @RequestMapping("/layout")
-    public String getCarPartialPage() {
-        return "cars/layout";
+    @RequestMapping("/list")
+    public String getCarPartialPageList() {
+        return "cars/list";
+    }
+
+    @RequestMapping("/edit")
+    public String getCarPartialPageEdit() {
+        return "cars/edit";
     }
 }

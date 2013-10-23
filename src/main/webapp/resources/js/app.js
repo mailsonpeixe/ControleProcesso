@@ -6,8 +6,11 @@ var App = angular.module('controleProcesso', ['controleProcesso.filters', 'contr
 
 // Declare app level module which depends on filters, and services
 App.config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/cars', {
-            templateUrl: 'cars/layout',
+        $routeProvider.when('/cars/edit', {
+            templateUrl: 'cars/edit',
+            controller: CarController
+        }).when('/cars/list', {
+            templateUrl: 'cars/list',
             controller: CarController
         });
 
