@@ -2,10 +2,29 @@
 <html lang="en" ng-app="controleProcesso">
     <head>
         <meta charset="utf-8">
-        <title>Service App</title>
+        <title>Controle de Processos</title>        
+        <meta name="description" content="overview &amp; stats" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.css" />
+        <link rel="stylesheet" href="resources/bootstrap/css/bootstrap-responsive.css" />
+        <link rel="stylesheet" href="resources/skin/css/font-awesome.min.css" />
+        <!--[if IE 7]>
+          <link rel="stylesheet" href="resources/skin/css/font-awesome-ie7.min.css" />
+        <![endif]-->
+        <!--fonts-->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />
+        <!--ace styles-->
+        <link rel="stylesheet" href="resources/skin/css/ace.min.css" />
+        <link rel="stylesheet" href="resources/skin/css/ace-responsive.min.css" />
+        <link rel="stylesheet" href="resources/skin/css/ace-skins.min.css" />
+        <!--[if lte IE 8]>
+          <link rel="stylesheet" href="resources/skin/css/ace-ie.min.css" />
+        <![endif]-->
         <link rel="stylesheet" href="resources/css/app.css"/>
-        <link rel="stylesheet" href="resources/bootstrap/css/bootstrap.min.css" />
+        <!--inline styles related to this page-->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     </head>
+
     <body>
         <div class="navbar">
             <div class="navbar-inner">
@@ -15,26 +34,22 @@
                         Controle de Processos
                     </small>
                 </a>
-                <ul class="nav pull-right">
-                    <li class="divider-vertical"></li>
-                    <li>
+                <ul class="nav pull-right ">
+                    <li class="bloco">
                         <a  href="#menuModal" data-toggle="modal">
-                            <i class="icon-list-alt"></i>
+                            <i class="icon-th"></i>
                         </a>
                     </li>
-                    <li class="divider-vertical"></li>
-                    <li>
+                    <li class="bloco bloco-cinza">
                         <a href="#">
                             <i class="icon-tasks"></i>
                         </a>
                     </li>
-                    <li class="divider-vertical"></li>
-                    <li>
+                    <li class="bloco bloco-verde">
                         <a href="#">
                             <i class="icon-calendar"></i> 03/10/1990
                         </a>
                     </li>
-                    <li class="divider-vertical"></li>
 
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mailson <b class="caret"></b></a>
@@ -57,20 +72,47 @@
                 <h3 id="myModalLabel">Menu</h3>
             </div>
             <div class="modal-body">
+                <div class="input-append">
+                            <input style="width:200px;" class="span2" type="text" required min="1" />
+                            <button class="btn btn-primary"  >Pesquisar</button>
+                        </div>
+                <hr class=""/>
                 <div class="row-fluid">
                     <ul class="thumbnails">
-                        <li><a href="#/cars" data-dismiss="modal">Cars</a></li>
-                        <li><a href="#/trains" data-dismiss="modal">Trains</a></li>
-                        <li><a href="#/railwaystations" data-dismiss="modal"> Railway Station</a></li>
-                        <li><a href="#/cidades" data-dismiss="modal">Cidades</a></li>
+                        <li>                           
+                            <a href="#/cars" data-dismiss="modal" class="btn btn-app btn-primary no-radius">
+                                <i class="icon-cog bigger-230"></i>
+                                Carros
+                            </a>
+                        </li>
+                        <li>
+                            <a  href="#/trains" data-dismiss="modal" class="btn btn-app radius-4">
+                                <i class="icon-plane bigger-230"></i>
+                                Trains
+                                <span class="badge badge-pink">+3</span>
+                            </a>
+                        <li>
+                            <a href="#/railwaystations" data-dismiss="modal" class="btn btn-app radius-4"> 
+                                <i class="icon-road bigger-230"></i>
+                                R. Station
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#/cidades" data-dismiss="modal" class="btn btn-app radius-4">
+                                <i class="icon-home bigger-230"></i>
+                                Cidades
+                            </a>
+                        </li>
                     </ul>
                 </div>
-            </div>           
+            </div>
         </div>
 
         <div id="wrapper">
             <hr class="" />
-            <div ng-view ></div>
+            <div ng-view >
+
+            </div>
 
         </div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
