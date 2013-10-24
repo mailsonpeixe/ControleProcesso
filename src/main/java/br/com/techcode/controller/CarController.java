@@ -27,6 +27,12 @@ public class CarController {
         return carService.getAllCars();
     }
 
+    @RequestMapping(value = "/editCar/{car}")
+    public @ResponseBody
+    String editCar(@PathVariable("car") String car) {
+        return car;
+    }
+   
     @RequestMapping(value = "/addCar/{car}", method = RequestMethod.POST)
     public @ResponseBody
     void addCar(@PathVariable("car") String car) {
@@ -50,8 +56,13 @@ public class CarController {
         return "cars/list";
     }
 
-    @RequestMapping("/edit")
+    @RequestMapping("/new")
     public String getCarPartialPageEdit() {
+        return "cars/edit";
+    }
+
+    @RequestMapping("/edit")
+    public String getCarPartialPageNew() {
         return "cars/edit";
     }
 }

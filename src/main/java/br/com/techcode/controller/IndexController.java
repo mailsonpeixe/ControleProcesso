@@ -25,4 +25,8 @@ public class IndexController {
     public String getIndexPage() {
         return "index";
     }
+    @RequestMapping("/home")
+    public String getCarPartialPageNew() {
+        return "index";
+    }
 }

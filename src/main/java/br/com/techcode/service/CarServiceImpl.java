@@ -6,13 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created with IntelliJ IDEA.
- * User: xvitcoder
- * Date: 12/20/12
- * Time: 11:14 PM
+ * Created with IntelliJ IDEA. User: xvitcoder Date: 12/20/12 Time: 11:14 PM
  */
 @Service("carService")
 public class CarServiceImpl implements CarService {
+
     private static List<String> carList = new ArrayList<String>();
 
     @Override
@@ -35,5 +33,14 @@ public class CarServiceImpl implements CarService {
     @Override
     public void deleteAll() {
         carList.clear();
+    }
+
+    public String findCar(String car) {
+        for (String a : carList) {
+            if (a.equals(car)) {
+                return a;
+            }
+        }
+        return "não encontrado";
     }
 }
