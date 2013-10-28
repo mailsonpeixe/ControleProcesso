@@ -12,7 +12,6 @@ var CarController = function($scope, $http, $routeParams) {
     }
     
     $scope.editCar = function(){
-        console.log('teste');
         $http.get('cars/editCar/' + $routeParams.car).success(function(car){
             $scope.carName = car;
         });

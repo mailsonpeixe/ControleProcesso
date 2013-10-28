@@ -1,0 +1,29 @@
+
+<form class="form-horizontal">
+
+    <div class="control-group">
+        <label class="control-label" for="descricao">Descrcição</label>
+
+        <div class="controls">
+            <input type="text" id="evento_descricao" ng-model="evento.descricao"
+                   placeholder="Descrição do Evento" required min="3">
+        </div>
+    </div>   
+
+    <div class="control-group">
+        <hr />
+        <div class="controls">
+            <button type="button" class="btn btn-primary"
+                    ng-disabled="!evento.descricao" ng-hide="editMode"
+                    ng-click="adicionaEvento(evento)">Adicionar</button>
+
+            <button type="button" class="btn btn-primary"
+                    ng-disabled="!evento.descricao" ng-show="editMode"
+                    ng-click="updateEvento(evento)">Salvar</button>
+            <button type="button" class="btn" ng-click="newEvento()">
+                Limpar
+            </button>
+        </div>
+    </div>
+
+</form>
