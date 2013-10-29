@@ -1,0 +1,68 @@
+<div class="input-append">
+
+    <div class="control-group">
+        <label class="control-label" for="nome">Nome</label>
+
+        <div class="controls">
+            <input style="width:358px;" id="nome" class="span2" type="text" ng-model="pessoaFisica.nome" required min="1" />
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="sobrenome">Sobrenome</label>
+
+        <div class="controls">
+
+            <input style="width:358px;" class="span2" id="sobrenome" type="text" ng-model="pessoaFisica.sobrenome" required min="1" />
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="cpf">CPF</label>
+
+        <div class="controls">
+
+            <div class="input-prepend">
+              
+
+                
+                <input class="input-medium input-mask-phone" type="text" ng-model="pessoaFisica.cpf" id="maskcpf" cpf />
+            </div>
+        </div>
+    </div>
+    <!--    <div class="control-group">
+            <label class="control-label" for="cpf">CPF</label>
+    
+            <div class="controls">
+    
+                <input style="width:358px;" id="cpf" class="span2" type="text" ng-model="pessoaFisica.cpf" required min="1" />
+            </div>
+        </div>-->
+    <div class="control-group">
+        <label class="control-label" for="rg">RG</label>
+
+        <div class="controls">
+
+            <input style="width:358px;" id="rg" class="span2" type="text" ng-model="pessoaFisica.rg" required min="1" />
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="email" >Email</label>
+
+        <div class="controls">
+
+            <input style="width:358px;" id="email" class="span2" type="text" ng-model="pessoaFisica.email" required min="1" />
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="telefone" >Telefone</label>
+
+        <div class="controls">
+
+            <input style="width:358px;" id="telefone" class="span2" type="text" ng-model="pessoaFisica.telefone" required min="1" />
+        </div>
+    </div>
+
+
+    <a href="#/pessoafisica/list" class="btn btn-primary" ng-click="addNewPessoaFisica(pessoaFisica)">
+        Salvar
+    </a>
+</div>

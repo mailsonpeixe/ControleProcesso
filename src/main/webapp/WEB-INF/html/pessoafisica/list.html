@@ -1,0 +1,28 @@
+<h3>Pessoa Fisica</h3>
+<div class="controls">
+    <a href="#/pessoafisica/new" class="btn btn-primary">
+        <i class="icon-gift"></i>
+        Nova Pessoa
+    </a>
+</div>
+<div class="alert alert-info" style="width:400px;" ng-show="pessoaFisicas.length == 0">
+    Nenhuma pessoa encontrada
+</div>
+<table class="table table-bordered table-striped" style="width:450px;" ng-show="pessoaFisicas.length > 0">
+    <thead>
+        <tr>
+            <th style="text-align: center; width: 25px;">Action</th>
+            <th style="text-align: center;">Nome</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="p in pessoaFisicas">
+            <td  style="width:70px;text-align: center;"><button class="btn btn-mini btn-danger" ng-click="removePessoaFisica(p)">Remover</button></td>
+            <td>{{p.nome}}</td>
+            <td>
+                <a href="#/pessoafisica/edit/{{p}}">edit</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<!--<button class="btn btn-danger"  ng-show="pessoaFisica.length > 1" ng-click="removeAllCars()">Remove All Cars</button>-->
